@@ -19,3 +19,5 @@ exports.deleteHouseboat = async (req, res) => {
   await houseboatService.deleteHouseboat(req.params.id);
   res.redirect('/houseboats');
 };
+
+

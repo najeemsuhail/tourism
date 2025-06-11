@@ -25,6 +25,16 @@ app.get('/', (req, res) => {
     res.render('home.njk');
 });
 
+// About us
+app.get('/about', (req, res) => {
+    res.render('about.njk');
+});
+
+// About us
+app.get('/contact', (req, res) => {
+    res.render('contact.njk');
+});
+
 // Use other route handlers
 app.use('/houseboats', houseboatRoutes);
 
