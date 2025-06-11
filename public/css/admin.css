@@ -1,0 +1,106 @@
+/* Add Form Styling */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-top: 2rem;
+}
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 400px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-form input,
+.add-form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-form button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.add-form button:hover {
+  background-color: #219150;
+}
+
+/* Table Styling */
+.data-table {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.data-table th {
+  background-color: #ecf0f1;
+  color: #333;
+}
+
+/* Table Inputs */
+.data-table input {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Common Button Base Style for Table */
+.btn-update,
+.btn-delete {
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+/* Update Button - Green */
+.btn-update {
+  background-color: #27ae60;
+}
+
+.btn-update:hover {
+  background-color: #219150;
+}
+
+/* Delete Button - Red */
+.btn-delete {
+  background-color: #e74c3c;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+/* Prevent layout shift in table forms */
+.data-table form {
+  margin: 0;
+}

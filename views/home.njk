@@ -1,0 +1,23 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}Home - Kerala Houseboats{% endblock %}
+
+{% block content %}
+
+ <div class="carousel">
+    <div class="carousel-images" id="carousel">
+      <img src="/images/backwater.jpg" alt="Scenic Backwaters">
+      <img src="/images/houseboat2.jpg" alt="Luxury Houseboat">
+      <img src="/images/sunset.jpg" alt="Sunset Cruise">
+    </div>
+  </div>
+
+ <script>
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % 3;
+      document.getElementById('carousel').style.transform = `translateX(-${index * 100}vw)`;
+    }, 4000);
+  </script>
+
+{% endblock %}
