@@ -10,6 +10,13 @@ header {
     text-align: center;
 }
 
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 2rem;
+}
+
 nav {
     display: flex;
     justify-content: center;
