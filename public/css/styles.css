@@ -159,6 +159,13 @@ footer {
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 3em 2em;
+}
+
+.container h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #007b5f;
 }
 
 .contact-container {
