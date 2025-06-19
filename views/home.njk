@@ -4,13 +4,66 @@
 
 {% block content %}
 
- <div class="carousel">
-    <div class="carousel-images" id="carousel">
+<div class="carousel">
+  <div class="carousel-images" id="carousel">
+    <div class="carousel-slide">
       <img src="/images/c1.jpg" alt="Scenic Backwaters">
+      <div class="carousel-text">
+         <h2>Explore the Backwaters</h2>
+        <p>Book a scenic houseboat experience in Kerala</p>
+      </div>
+    </div>
+    <div class="carousel-slide">
       <img src="/images/c2.jpg" alt="Luxury Houseboat">
-      <img src="/images/c3.webp" alt="Sunset Cruise">
+      <div class="carousel-text">
+         <h2>Stay in Luxury</h2>
+        <p>Book a scenic houseboat experience in Kerala</p>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <img src="/images/c3.jpg" alt="Sunset Cruise">
+      <div class="carousel-text">
+        <h2>Sunset Cruises</h2>
+        <p>Book a scenic houseboat experience in Kerala</p>      
+      </div>
     </div>
   </div>
+</div>
+
+{# List of categories #}
+<section class="category-grid-section">
+  <h2>Browse by Category</h2>
+  <div class="category-grid">
+    {% for category in categories %}
+      <div class="category-card">
+        <a href="/listings/{{ category.name }}">
+          <img src="/images/{{ category.image }}" alt="{{ category.name }}">
+          <div class="category-name">{{ category.name }}</div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{# List of testimonials #}
+<section class="testimonials">
+  <h2>What Our Guests Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p>"An unforgettable experience! The houseboat was clean and the sunset was magical."</p>
+      <strong>– Neha, Mumbai</strong>
+    </div>
+    <div class="testimonial-card">
+      <p>"Booking was super easy through WhatsApp. The team is very responsive and friendly."</p>
+      <strong>– Arjun, Bengaluru</strong>
+    </div>
+    <div class="testimonial-card">
+      <p>"We stayed in a deluxe boat with amazing food. Highly recommend Hallo Alleppey!"</p>
+      <strong>– Lisa, Germany</strong>
+    </div>
+  </div>
+</section>
+
 
 
  <script>

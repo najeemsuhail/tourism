@@ -4,6 +4,8 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
+const categoryService = require('./services/categoryService');
+
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,30 +19,29 @@ nunjucks.configure('views', {
 });
 
 app.set('view engine', 'njk');
+
+// ✅ Load categories before all routes
+app.use(async (req, res, next) => {
+  try {
+    const categories = await categoryService.getAllCategories();
+    res.locals.categories = categories;
+    next();
+  } catch (err) {
+    next(err);
+  }
+});
+
 // Routes
-const houseboatRoutes = require('./routes/houseboatRoutes');
+const listingRoutes = require('./routes/listingRoutes');
 
-// Homepage
-app.get('/', (req, res) => {
-    res.render('home.njk');
-});
+app.get('/', (req, res) => res.render('home.njk'));
+app.get('/about', (req, res) => res.render('about.njk'));
+app.get('/contact', (req, res) => res.render('contact.njk'));
+app.use('/listings', listingRoutes);
 
-// About us
-app.get('/about', (req, res) => {
-    res.render('about.njk');
-});
-
-// About us
-app.get('/contact', (req, res) => {
-    res.render('contact.njk');
-});
-
-// Use other route handlers
-app.use('/houseboats', houseboatRoutes);
-
-// Fallback
+// 404
 app.use((req, res) => {
-    res.render('home.njk');
+  res.status(404).render('404.njk', { url: req.originalUrl });
 });
 
 // Start server

@@ -1,13 +1,23 @@
-.houseboat-list {
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  margin-top: 20px;
 }
 
-.houseboat-card {
-  border: 1px solid #ddd;
-  padding: 15px;
+.card {
+  padding: 16px;
   border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  background: #fdfdfd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 4px;
 }

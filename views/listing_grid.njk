@@ -1,0 +1,23 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}{{ category | capitalize }} - {{ subcategory | capitalize }} Listings{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h2>{{ category | capitalize }}{% if subcategory %} / {{ subcategory | capitalize }}{% endif %}</h2>
+
+    <div class="grid-container">
+    {% for listing in listings %}
+        <div class="card">
+        <img src="/images/listing/{{ listing.image }}" alt="{{ listing.name }}">
+        <h3>{{ listing.name }}</h3>
+        <p>{{ listing.description }}</p>
+        <p><strong>₹{{ listing.price }}</strong></p>
+        </div>
+    {% else %}
+        <p>No listings found.</p>
+    {% endfor %}
+    </div>
+    {% endblock %}
+</div>
