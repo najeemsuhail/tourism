@@ -3,7 +3,8 @@ const listingService = require('../services/listingService');
 exports.showListings = async (req, res) => {
   const listings = await listingService.getAllListings();
   const categories = await listingService.getAllCategories();
-  res.render('listings.njk', { listings, categories });
+  const attributes = await listingService.getAllAttributes();
+  res.render('listings.njk', { listings, categories, attributes });
 };
 
 exports.createListing = async (req, res) => {
@@ -11,7 +12,12 @@ exports.createListing = async (req, res) => {
   if (!Array.isArray(categoryIds)) {
     categoryIds = categoryIds ? [categoryIds] : [];
   }
-  await listingService.addListing(req.body, categoryIds);
+
+  let attributeIds = req.body.attributeIds;
+  if (!Array.isArray(attributeIds)) {
+    attributeIds = attributeIds ? [attributeIds] : [];
+  }
+  await listingService.addListing(req.body, categoryIds, attributeIds);
   res.redirect('/listings');
 };
 
@@ -20,7 +26,12 @@ exports.editListing = async (req, res) => {
   if (!Array.isArray(categoryIds)) {
     categoryIds = categoryIds ? [categoryIds] : [];
   }
-  await listingService.updateListing(req.params.id, req.body, categoryIds);
+  let attributeIds = req.body.attributeIds;
+  if (!Array.isArray(attributeIds)) {
+    attributeIds = attributeIds ? [attributeIds] : [];
+  }
+
+  await listingService.updateListing(req.params.id, req.body, categoryIds, attributeIds);
   res.redirect('/listings');
 };
 
@@ -48,4 +59,16 @@ exports.showListingsByCategory = async (req, res) => {
       message: 'An unexpected error occurred. Please try again later.',
     });
   }
+};
+
+
+exports.showListingDetails = async (req, res) => {
+  const listingId = req.params.id;
+  const listing = await listingService.getListingById(listingId);
+
+  if (!listing) {
+    return res.status(404).render('404.njk');
+  }
+
+  res.render('listing-detail.njk', { listing });
 };

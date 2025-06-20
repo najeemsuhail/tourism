@@ -75,4 +75,5 @@ db.run(`INSERT INTO listings (name, description, price, image)
   db.run(`INSERT INTO listing_categories (listing_id, category_id) VALUES (2, 7)`); // Backwater -> Deluxe
 });
 
+
 db.close();

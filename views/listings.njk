@@ -20,13 +20,26 @@
     {% endfor %}
   </select>
 
+  <select name="attributeIds" multiple>
+    {% for attr in attributes %}
+      <option value="{{ attr.id }}">{{ attr.name }}</option>
+    {% endfor %}
+  </select>
+
   <button type="submit">Add Listing</button>
 </form>
 
 <table class="data-table">
   <thead>
     <tr>
-      <th>Name</th><th>Description</th><th>Price</th><th>Image</th><th>Categories</th><th>Update</th><th>Delete</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th>Categories</th>
+      <th>Attributes</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -44,6 +57,15 @@
             {% endfor %}
           </select>
         </td>
+
+        <td>
+            <select name="attributeIds" multiple>
+              {% for attr in attributes %}
+                <option value="{{ attr.id }}" {% if attr.id in listing.attributeIds %}selected{% endif %}>{{ attr.name }}</option>
+              {% endfor %}
+            </select>
+        </td>
+
         <td><button type="submit" class="btn-update">Update</button></td>
       </form>
       <form method="POST" action="/listings/delete/{{ listing.id }}">

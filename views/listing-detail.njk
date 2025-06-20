@@ -1,0 +1,25 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}{{ listing.name }} - Details{% endblock %}
+
+{% block content %}
+<section class="listing-detail">
+  <h1>{{ listing.name }}</h1>
+   {% if listing.categories.length %}
+        <h3>{{ listing.categories | join(' / ') }}</h3>
+   {% endif %}
+
+  <img src="/images/listing/{{ listing.image }}" alt="{{ listing.name }}" class="detail-img">
+
+  <p><strong>About:</strong> {{ listing.description }}</p>
+  <p><strong>Price:</strong> ₹{{ listing.price }}</p>
+
+  {% if listing.attributes.length %}
+    <p><strong>Amenities:</strong> {{ listing.attributes | join(', ') }}</p>
+  {% endif %}
+
+  <a class="whatsapp-btn" href="https://wa.me/919895822717?text=I%20want%20to%20book%20{{ listing.name | urlencode }}" target="_blank">
+    Book Now on WhatsApp
+  </a>
+</section>
+{% endblock %}

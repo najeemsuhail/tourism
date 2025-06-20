@@ -360,6 +360,18 @@ nav a:hover::after {
   border-radius: 4px;
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-link:hover {
+  transform: scale(1.01);
+}
+
+
 /* ADMIN FORM */
 .add-form {
   display: flex;
@@ -523,4 +535,57 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 15px;
   font-size: 0.85rem;
+}
+
+/*details page*/
+/* Listing Details Page */
+.listing-detail {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.detail-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.listing-detail h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.listing-detail h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.listing-detail p {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: var(--text-color);
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
 }
