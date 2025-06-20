@@ -1,6 +1,6 @@
 {% extends "layouts/base.njk" %}
 
-{% block title %}Home - Hallo Alleppey{% endblock %}
+{% block title %}Home - Hello Alleppey{% endblock %}
 
 {% block content %}
 
@@ -58,20 +58,11 @@
       <strong>– Arjun, Bengaluru</strong>
     </div>
     <div class="testimonial-card">
-      <p>"We stayed in a deluxe boat with amazing food. Highly recommend Hallo Alleppey!"</p>
+      <p>"We stayed in a deluxe boat with amazing food. Highly recommend Hello Alleppey!"</p>
       <strong>– Lisa, Germany</strong>
     </div>
   </div>
 </section>
 
-
-
- <script>
-    let index = 0;
-    setInterval(() => {
-      index = (index + 1) % 3;
-      document.getElementById('carousel').style.transform = `translateX(-${index * 100}vw)`;
-    }, 4000);
-  </script>
 
 {% endblock %}
