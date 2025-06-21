@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container">
-  <h2>{{ category | capitalize }}{% if subcategory %} / {{ subcategory | capitalize }}{% endif %}</h2>
+  <h1>{{ category | capitalize }}{% if subcategory %} / {{ subcategory | capitalize }}{% endif %}</h1>
 
   <div class="grid-container">
     {% for listing in listings %}

@@ -1,4 +1,15 @@
 @media (max-width: 768px) {
+  /*header logo*/
+  .header-top {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+/*manu*/
   nav {
     position: absolute;
     top: 70px;
