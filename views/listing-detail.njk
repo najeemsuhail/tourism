@@ -21,5 +21,28 @@
   <a class="whatsapp-btn" href="https://wa.me/919895822717?text=I%20want%20to%20book%20{{ listing.name | urlencode }}" target="_blank">
     Book Now on WhatsApp
   </a>
+
+
+  <div class="listing-carousel-container">
+    <button class="carousel-prev">&#10094;</button>
+    <div class="listing-carousel-wrapper">
+      <div class="listing-carousel-track">
+        {% for img in listing.gallery %}
+          <div class="listing-carousel-item">
+            <img src="/images/listing/{{ img }}" alt="{{ listing.name }}">
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <button class="carousel-next">&#10095;</button>
+  </div>
+
+  <div id="image-lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Large Image">
+  </div>
+
+
 </section>
+
 {% endblock %}

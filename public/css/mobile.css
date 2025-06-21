@@ -1,46 +1,5 @@
-/* Responsive styles 
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
   nav {
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    display: none;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .submenu {
-    position: relative;
-    border: none;
-    box-shadow: none;
-    padding-left: 15px;
-  }
-} */
-
-
-
-
-
-nav {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-   nav {
     position: absolute;
     top: 70px;
     left: 0;
@@ -66,5 +25,13 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
+  }
+
+  .submenu-toggle {
+    display: inline-block;
+  }
+
+  .listing-carousel-item {
+    flex: 0 0 100%; 
   }
 }

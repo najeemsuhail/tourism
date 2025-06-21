@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 const listingService = require('../services/listingService');
 
 exports.showListings = async (req, res) => {
@@ -70,5 +73,12 @@ exports.showListingDetails = async (req, res) => {
     return res.status(404).render('404.njk');
   }
 
+  const baseName = listing.image.split('.')[0]; // e.g., "royalboat"
+  const dirPath = path.join(__dirname, '../public/images/listing');
+
+  const allImages = fs.readdirSync(dirPath)
+    .filter(filename => filename.startsWith(baseName));
+
+  listing.gallery = allImages;
   res.render('listing-detail.njk', { listing });
 };
