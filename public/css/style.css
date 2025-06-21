@@ -16,7 +16,7 @@
 
   --container-padding: 3em 2em;
   --section-padding: 40px 20px;
-  --font-family: 'Segoe UI', sans-serif;
+  --font-family: 'Poppins', sans-serif;
 }
 
 * {
@@ -28,6 +28,8 @@
 body {
   font-family: var(--font-family);
   background: var(--background-light);
+  letter-spacing: 0.5px; 
+  line-height: 1.6; 
 }
 
 /* HEADER */
@@ -647,3 +649,14 @@ footer {
   z-index: 10000;
 }
 
+/*notification bar*/
+.notification-bar {
+  background-color: #ffcc00;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
