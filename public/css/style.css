@@ -648,15 +648,3 @@ footer {
   cursor: pointer;
   z-index: 10000;
 }
-
-/*notification bar*/
-.notification-bar {
-  background-color: #ffcc00;
-  color: #000;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  line-height: 1.4;
-}
